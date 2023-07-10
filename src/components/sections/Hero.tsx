@@ -45,7 +45,7 @@ const Hero = () => {
         Hi, my name is
       </motion.div>
       <motion.h1
-        className="text-2xl md:text-6xl font-bold mt-2"
+        className="text-3xl md:text-6xl font-bold mt-2"
         initial={{ y: -250, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
