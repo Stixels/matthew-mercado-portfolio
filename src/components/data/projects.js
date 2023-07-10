@@ -8,7 +8,7 @@ export const projects = [
       {
         heading: "Overview",
         text: "Developed a MERN stack SaaS application to facilitate the operation of escape rooms, improving efficiency, and collecting valuable statistics. The project was born out of a need observed while working at Escape This Frederick. The solution can be found at ",
-        link: "https://escapedirector.software",
+        link: "https://escapedirector.com",
         linkText: "escapedirector.com",
         remainingText: ".",
       },
@@ -36,21 +36,21 @@ export const projects = [
   },
   {
     id: 2,
-    title: [500, "Escape This Frederick Website"],
-    subtitle: "Web Development and UX/UI Design",
+    title: [500, "ETF Website"],
+    subtitle: "Escape This Frederick Website Redesign",
     imagePath: "/escape-this-frederick.png",
     description: [
       {
         heading: "Overview",
-        text: "Revamped and maintained ",
+        text: "Redesigned and maintained ",
         link: "https://escapethisfrederick.com",
         linkText: "escapethisfrederick.com",
         remainingText:
-          ", one of the most popular escape room websites in Maryland.",
+          ", optimizing SEO to become the most popular escape room in Frederick and one of the most popular in Maryland.",
       },
       {
         heading: "Impact",
-        text: "Implemented UX/UI design principles to improve the site's performance: reduced the bounce rate from 53% to 13% and increased the conversion rate from 2.5% to 4.5%.",
+        text: "Implemented UX/UI design principles to reduced the bounce rate from 53% to 13% and increased the conversion rate from 2.5% to 4.5%. The site now ranks #1 for 'escape room frederick md' and 'escape room frederick maryland' and ranks on the first page for 'escape room maryland'.",
       },
     ],
     toolsUsed: [
@@ -58,18 +58,21 @@ export const projects = [
       "CSS",
       "JavaScript",
       "UX/UI Design Principles",
-      "WordPress",
+      "SEO",
+      "Google Analytics",
+      "Google Search Console",
+      "Google Ads",
     ],
   },
   {
     id: 3,
-    title: [500, "My Portfolio Website"],
-    subtitle: "Web Development and UX/UI Design",
+    title: [500, "Portfolio Site"],
+    subtitle: "Web Development",
     imagePath: "/portfolio-website.png",
     description: [
       {
         heading: "Overview",
-        text: "Built a personal portfolio website to showcase my work, skills, and experiences. The portfolio is available at ",
+        text: "Built this responsive and performant portfolio website to showcase my work, skills, and experiences. The portfolio is available at ",
         link: "https://matthewmercado.dev",
         linkText: "matthewmercado.dev",
         remainingText: ".",

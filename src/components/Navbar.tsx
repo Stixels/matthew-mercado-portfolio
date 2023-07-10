@@ -30,14 +30,18 @@ const Navbar = () => {
       : "fixed w-full z-30 shadow items-center flex flex-wrap p-3 transition-all duration-300";
 
   const navbarItemClasses =
-    "px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75 cursor-pointer";
+    "px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75 cursor-pointer border-b-2 border-transparent hover:border-blue-400 transition-colors";
 
   const handleLinkClick = () => {
     setNavbarOpen(false);
   };
 
   return (
-    <nav className={navbarClasses}>
+    <nav
+      className={navbarClasses}
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <a
@@ -50,6 +54,7 @@ const Navbar = () => {
             className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
             type="button"
             onClick={() => setNavbarOpen(!navbarOpen)}
+            aria-label={navbarOpen ? "Close menu" : "Open menu"}
           >
             {navbarOpen ? <FiX /> : <FiMenu />}{" "}
           </button>
@@ -61,7 +66,7 @@ const Navbar = () => {
           }
           id="navbar-info"
         >
-          <ul className="flex flex-col lg:flex-row list-none lg:ml-auto space-y-2 lg:space-y-0 lg:items-center gap-4">
+          <ul className="flex flex-col items-end justify-end lg:flex-row w-full list-none lg:ml-auto space-y-2 lg:space-y-0 lg:items-center gap-4 p-3 rounded-lg">
             <li className="nav-item">
               <Link
                 to="home"
