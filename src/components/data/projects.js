@@ -58,10 +58,12 @@ export const projects = [
       "CSS",
       "JavaScript",
       "UX/UI Design Principles",
+      "Figma",
       "SEO",
       "Google Analytics",
       "Google Search Console",
       "Google Ads",
+      "WordPress",
     ],
   },
   {
