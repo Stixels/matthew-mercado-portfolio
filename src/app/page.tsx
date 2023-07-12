@@ -6,7 +6,6 @@ import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
-import { Toaster } from "@/components/ui/toaster";
 
 const App = () => {
   return (
@@ -19,7 +18,6 @@ const App = () => {
         <Contact />
         <Footer />
       </div>
-      <Toaster />
     </div>
   );
 };
