@@ -1,4 +1,3 @@
-// pages/api/sendEmail.ts
 import sgMail from "@sendgrid/mail";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -25,19 +24,10 @@ export async function POST(request: NextRequest) {
   };
 
   try {
-    await sgMail
-      .send(content)
-      .then(() => {
-        return new NextResponse("Message sent successfully.", {
-          status: 200,
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-        return new NextResponse("Message failed to send.", {
-          status: 400,
-        });
-      });
+    await sgMail.send(content);
+    return new NextResponse("Message sent successfully.", {
+      status: 200,
+    });
   } catch (error) {
     console.error(error);
     return new NextResponse("Message failed to send.", {
