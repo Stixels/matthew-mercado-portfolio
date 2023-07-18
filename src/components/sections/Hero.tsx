@@ -62,7 +62,7 @@ const Hero = () => {
       </div>
       <div className="md:mt-10 mt-4 text-sm md:text-md text-gray-400 md:w-1/2">
         I specialize in designing and implementing beautiful and performant web
-        applications. I am Manager and Web Developer at Escape This
+        applications. I am a Manager and Web Developer at Escape This
         Frederick and owner of Escape Director.
       </div>
       <div className="flex flex-row gap-4 mt-10 md:mt-16">
