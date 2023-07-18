@@ -28,7 +28,7 @@ export const projects = [
       "SendGrid",
       "JWTs",
       "MUI",
-      "Amazon S3",
+      "AWS S3",
       "Heroku",
       "Vercel",
       "Git",
