@@ -67,16 +67,19 @@ const About = () => {
               , a web-app for escape room businesses manage their business; and
               have worked as a Software Engineer Intern at{" "}
               <span className="text-blue-400">Box</span>, leading a project to
-              implement social media link unfurling.
+              implement social media link unfurling, worked with React and Redux
+              to create components, and developed Gherkin scripts with
+              Webdriver.io and Selenium to support BDD.
             </p>
 
             <h2 className="text-2xl font-bold mt-4">What&apos;s Next?</h2>
             <p>
               Fluent in both{" "}
               <span className="text-blue-400">English and Spanish</span>, I look
-              forward to bringing my creative spark, enthusiasm, and technical
-              prowess to a forward-thinking company. Let&apos;s connect and code
-              our way to innovation, one line of code at a time.
+              forward to bringing my creative spark, burning passion, and
+              technical prowess to a forward-thinking company. Let&apos;s
+              connect and code our way to innovation, one line of code at a
+              time.
             </p>
           </div>
           <div className="md:block md:w-1/2 md:mt-0 pt-12">

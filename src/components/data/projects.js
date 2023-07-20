@@ -7,14 +7,14 @@ export const projects = [
     description: [
       {
         heading: "Overview",
-        text: "Developed a MERN stack SaaS application to facilitate the operation of escape rooms, improving efficiency, and collecting valuable statistics. The project was born out of a need observed while working at Escape This Frederick. The solution can be found at ",
+        text: "Engineered a MERN (MongoDB, Express.js, React, Node.js) tech stack SaaS-based escape room management system from ground zero that reduces training time and costs and captures valuable statistics to help escape room owners make data-driven decisions. The project was born out of a need observed while working at Escape This Frederick. The solution can be found at ",
         link: "https://escapedirector.com",
         linkText: "escapedirector.com",
         remainingText: ".",
       },
       {
         heading: "Impact",
-        text: "The application greatly improved the operation of escape rooms, reduced training time and monthly costs, and captured critical performance metrics. The user-friendly interface and robust functionality have transformed the way escape rooms are managed.",
+        text: "The application tackles user authentication and authorization with secure routes, secure payment using Stripe API, offers a scalable S3 storage solution, socket.io for real-time communication with players, etc. The application greatly improved the operation of escape rooms, reduced training time and monthly costs, and captured critical performance metrics.",
       },
     ],
     toolsUsed: [
@@ -36,6 +36,36 @@ export const projects = [
   },
   {
     id: 2,
+    title: [500, "Portfolio Site"],
+    subtitle: "Web Development",
+    imagePath: "/portfolio-website.png",
+    description: [
+      {
+        heading: "Overview",
+        text: "Built this responsive and performant portfolio website to showcase my work, skills, and experiences. The portfolio is available at ",
+        link: "https://matthewmercado.dev",
+        linkText: "matthewmercado.dev",
+        remainingText: ".",
+      },
+      {
+        heading: "Impact",
+        text: "The website demonstrates some of my technical abilities, design sensibilities, and project experiences.",
+      },
+    ],
+    toolsUsed: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vercel",
+      "ShadcnUI",
+      "SendGrid",
+      "Figma",
+      "Git",
+    ],
+  },
+  {
+    id: 3,
     title: [500, "ETF Website"],
     subtitle: "Escape This Frederick Website Redesign",
     imagePath: "/escape-this-frederick.png",
@@ -64,35 +94,6 @@ export const projects = [
       "Google Search Console",
       "Google Ads",
       "WordPress",
-    ],
-  },
-  {
-    id: 3,
-    title: [500, "Portfolio Site"],
-    subtitle: "Web Development",
-    imagePath: "/portfolio-website.png",
-    description: [
-      {
-        heading: "Overview",
-        text: "Built this responsive and performant portfolio website to showcase my work, skills, and experiences. The portfolio is available at ",
-        link: "https://matthewmercado.dev",
-        linkText: "matthewmercado.dev",
-        remainingText: ".",
-      },
-      {
-        heading: "Impact",
-        text: "The website demonstrates some of my technical abilities, design sensibilities, and project experiences.",
-      },
-    ],
-    toolsUsed: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Vercel",
-      "ShadcnUI",
-      "SendGrid",
-      "Figma",
-      "Git",
     ],
   },
 ];
