@@ -4,8 +4,8 @@ import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 // Footer component
 const Footer = () => {
   return (
-    <footer className="p-6 my-20">
-      <div className="flex flex-col justify-between items-center gap-2">
+    <footer className="my-20 p-6">
+      <div className="flex flex-col items-center justify-between gap-2">
         <div>
           <p className="text-gray-400"> Designed & Built by Matthew Mercado</p>
         </div>

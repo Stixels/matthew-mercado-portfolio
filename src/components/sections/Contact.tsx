@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
   return (
     <div
       id="contact"
-      className="flex flex-col lg:flex-row items-start lg:items-center justify-center space-y-6 lg:space-y-0 lg:space-x-6 max-w-5xl mx-auto p-4 md:p-8 md:py-20 bg-slate-900 rounded-lg"
+      className="mx-auto flex max-w-5xl flex-col items-start justify-center space-y-6 rounded-lg bg-slate-900 p-4 md:p-8 md:py-20 lg:flex-row lg:items-center lg:space-x-6 lg:space-y-0"
     >
       <div className="flex flex-col space-y-4">
         <h2 className="text-2xl font-bold text-blue-400">My Contact Info</h2>
@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
           </a>
         </div>
       </div>
-      <div className="p-6 mt-6 text-left border w-full rounded-xl hover:shadow-xl bg-slate-950">
+      <div className="mt-6 w-full rounded-xl border bg-slate-950 p-6 text-left hover:shadow-xl">
         <h1 className="text-2xl font-bold text-blue-400">Contact Me</h1>
         <p className="mt-2 text-gray-400">
           If you have any questions or would like to get in touch with me
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
             <label className="text-gray-400">Name</label>
             <Input
               {...register("name")}
-              className="mt-1 mb-4 p-2 rounded-md border-2"
+              className="mb-4 mt-1 rounded-md border-2 p-2"
             />
             {errors.name && (
               <p className="text-red-600">{errors.name.message as string}</p>
@@ -131,7 +131,7 @@ const Contact: React.FC = () => {
             <label className="text-gray-400">Email</label>
             <Input
               {...register("email")}
-              className="mt-1 mb-4 p-2 rounded-md border-2"
+              className="mb-4 mt-1 rounded-md border-2 p-2"
             />
             {errors.email && (
               <p className="text-red-600">{errors.email.message as string}</p>
@@ -141,7 +141,7 @@ const Contact: React.FC = () => {
             <label className="text-gray-400">Message</label>
             <Textarea
               {...register("message")}
-              className="mt-1 p-2 h-20 rounded-md border-2"
+              className="mt-1 h-20 rounded-md border-2 p-2"
             />
             {errors.message && (
               <p className="text-red-600">{errors.message.message as string}</p>

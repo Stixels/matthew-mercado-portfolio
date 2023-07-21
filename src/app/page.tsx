@@ -9,9 +9,9 @@ import Footer from "@/components/sections/Footer";
 
 const App = () => {
   return (
-    <div className="flex flex-col items-center min-h-screen">
+    <div className="flex min-h-screen flex-col items-center">
       <Navbar />
-      <div className="flex flex-col items-center w-full max-w-5xl">
+      <div className="flex w-full max-w-5xl flex-col items-center">
         <Hero />
         <About />
         <Projects />

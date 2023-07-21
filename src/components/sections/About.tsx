@@ -4,12 +4,12 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="flex items-center justify-center bg-slate-900 rounded md:p-8 mt-32">
+    <div className="mt-32 flex items-center justify-center rounded bg-slate-900 md:p-8">
       <div
-        className="max-w-5xl bg-slate-800 rounded-lg shadow-lg p-8 space-y-8 text-md leading-loose -mt-32"
+        className="text-md -mt-32 max-w-5xl space-y-8 rounded-lg bg-slate-800 p-8 leading-loose shadow-lg"
         id="about"
       >
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <h1 className="text-4xl font-bold">About Me</h1>
           <div className="flex space-x-5 text-blue-400">
             <a
@@ -38,7 +38,7 @@ const About = () => {
 
         <div className="md:flex md:items-center md:gap-8">
           <div className="flex flex-col gap-2 md:w-1/2">
-            <h2 className="text-2xl font-bold mt-4">Background & Experience</h2>
+            <h2 className="mt-4 text-2xl font-bold">Background & Experience</h2>
             <p>
               Born and raised in Puerto Rico, I&apos;m a Computer Science
               graduate from{" "}
@@ -72,7 +72,7 @@ const About = () => {
               Webdriver.io and Selenium to support BDD.
             </p>
 
-            <h2 className="text-2xl font-bold mt-4">What&apos;s Next?</h2>
+            <h2 className="mt-4 text-2xl font-bold">What&apos;s Next?</h2>
             <p>
               Fluent in both{" "}
               <span className="text-blue-400">English and Spanish</span>, I look
@@ -82,7 +82,7 @@ const About = () => {
               time.
             </p>
           </div>
-          <div className="md:block md:w-1/2 md:mt-0 pt-12">
+          <div className="pt-12 md:mt-0 md:block md:w-1/2">
             <Image
               className="rounded-lg"
               src="/matthew-headshot.png"

@@ -27,11 +27,11 @@ const Hero = () => {
 
   return (
     <div
-      className="p-8 h-screen flex flex-col justify-center items-start max-w-5xl"
+      className="flex h-screen max-w-5xl flex-col items-start justify-center p-8"
       id="home"
     >
       <motion.div
-        className="text-sm md:text-md text-blue-400 font-bold"
+        className="md:text-md text-sm font-bold text-blue-400"
         initial={{ y: 0, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
@@ -45,7 +45,7 @@ const Hero = () => {
         Hi, my name is
       </motion.div>
       <motion.h1
-        className="text-3xl md:text-6xl font-bold mt-2"
+        className="mt-2 text-3xl font-bold md:text-6xl"
         initial={{ y: -250, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
@@ -57,15 +57,15 @@ const Hero = () => {
       >
         Matthew Mercado
       </motion.h1>
-      <div className="text-xl md:text-6xl mt-2 md:mt-6 text-gray-300 font-bold h-10 md:h-16">
+      <div className="mt-2 h-10 text-xl font-bold text-gray-300 md:mt-6 md:h-16 md:text-6xl">
         <TypeAnimation sequence={strings} speed={40} repeat={Infinity} />
       </div>
-      <div className="md:mt-10 mt-4 text-sm md:text-md text-gray-400 md:w-1/2">
+      <div className="md:text-md mt-4 text-sm text-gray-400 md:mt-10 md:w-1/2">
         I specialize in designing and implementing beautiful and performant web
-        applications. I am a Manager and Web Developer at Escape This
-        Frederick and owner of Escape Director.
+        applications. I am a Manager and Web Developer at Escape This Frederick
+        and owner of Escape Director.
       </div>
-      <div className="flex flex-row gap-4 mt-10 md:mt-16">
+      <div className="mt-10 flex flex-row gap-4 md:mt-16">
         <Button asChild className="bg-blue-400">
           <Link
             to="contact"
@@ -83,7 +83,7 @@ const Hero = () => {
             duration={500}
             className="cursor-pointer"
           >
-            Learn More <AiOutlineArrowDown className="animate-bounce ml-2" />
+            Learn More <AiOutlineArrowDown className="ml-2 animate-bounce" />
           </Link>
         </Button>
       </div>

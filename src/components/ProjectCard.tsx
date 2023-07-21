@@ -48,7 +48,7 @@ const CardDescriptionItem: React.FC<{ desc: ProjectDescription }> = ({
         href={desc.link}
         target="_blank"
         rel="noreferrer"
-        className="text-blue-400 hover:text-blue-300 underline"
+        className="text-blue-400 underline hover:text-blue-300"
       >
         {desc.linkText}
       </a>
@@ -72,8 +72,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         animate={{ y: inView ? 0 : -50, opacity: inView ? 1 : 0 }}
         transition={{ duration: 0.5, delay: index * 0.2 }}
       >
-        <Card className="rounded-lg overflow-hidden shadow-2xl">
-          <CardHeader className="p-8 bg-slate-700 text-white">
+        <Card className="overflow-hidden rounded-lg shadow-2xl">
+          <CardHeader className="bg-slate-700 p-8 text-white">
             <CardTitle>
               {inView && (
                 <TypeAnimation
@@ -85,18 +85,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             </CardTitle>
           </CardHeader>
           <CardContent className="p-8">
-            <h4 className="text-xl mb-4 font-semibold">{project.subtitle}</h4>
+            <h4 className="mb-4 text-xl font-semibold">{project.subtitle}</h4>
             {project.description.map((desc) => (
               <CardDescriptionItem key={desc.heading} desc={desc} />
             ))}
-            <div className="flex flex-wrap gap-2 mt-4">
+            <div className="mt-4 flex flex-wrap gap-2">
               {project.toolsUsed.map((tool, i) => (
                 <Badge key={i}>{tool}</Badge>
               ))}
             </div>
           </CardContent>
-          <CardFooter className="md:p-12 flex flex-col gap-4">
-            <div className="flex items-center justify-center w-full overflow-visible relative">
+          <CardFooter className="flex flex-col gap-4 md:p-12">
+            <div className="relative flex w-full items-center justify-center overflow-visible">
               <div className="overflow-visible">
                 <a
                   href={projectLink}
@@ -121,7 +121,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               </div>
             </div>
             <Button
-              className="mt-4 bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors"
+              className="mt-4 bg-blue-500 font-semibold text-white transition-colors hover:bg-blue-600"
               onClick={() => window.open(projectLink, "_blank")}
             >
               View Project

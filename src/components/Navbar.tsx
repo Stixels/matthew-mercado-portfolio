@@ -42,16 +42,16 @@ const Navbar = () => {
       role="navigation"
       aria-label="main navigation"
     >
-      <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+      <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
+        <div className="relative flex w-full justify-between lg:static lg:block lg:w-auto lg:justify-start">
           <a
-            className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+            className="mr-4 inline-block whitespace-nowrap py-2 text-sm font-bold uppercase leading-relaxed"
             href="/"
           >
             Matthew Mercado
           </a>
           <button
-            className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            className="block cursor-pointer rounded border border-solid border-transparent bg-transparent px-3 py-1 text-xl leading-none outline-none focus:outline-none lg:hidden"
             type="button"
             onClick={() => setNavbarOpen(!navbarOpen)}
             aria-label={navbarOpen ? "Close menu" : "Open menu"}
@@ -61,12 +61,12 @@ const Navbar = () => {
         </div>
         <div
           className={
-            "lg:flex flex-grow items-center lg:justify-end" +
+            "flex-grow items-center lg:flex lg:justify-end" +
             (navbarOpen ? " flex" : " hidden")
           }
           id="navbar-info"
         >
-          <ul className="flex flex-col items-end justify-end lg:flex-row w-full list-none lg:ml-auto space-y-2 lg:space-y-0 lg:items-center gap-4 p-3 rounded-lg">
+          <ul className="flex w-full list-none flex-col items-end justify-end gap-4 space-y-2 rounded-lg p-3 lg:ml-auto lg:flex-row lg:items-center lg:space-y-0">
             <li className="nav-item">
               <Link
                 to="home"
@@ -121,7 +121,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Button
-                className="bg-blue-400 hover:bg-blue-300 flex items-center space-x-2 cursor-pointer"
+                className="flex cursor-pointer items-center space-x-2 bg-blue-400 hover:bg-blue-300"
                 asChild
               >
                 <a
