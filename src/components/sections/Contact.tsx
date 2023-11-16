@@ -64,10 +64,10 @@ const Contact: React.FC = () => {
         <div className="flex items-center space-x-2">
           <MdEmail size={20} className="text-blue-400" />
           <a
-            href="mailto:matthewmercado@escapedirector.software"
+            href="mailto:matthewmercado1999@gmail.com"
             className={contactLinkclasses}
           >
-            matthewmercado@escapedirector.software
+            matthewmercado1999@gmail.com
           </a>
         </div>
         <div className="flex items-center space-x-2">
