@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
   try {
     const { error } = await resend.emails.send({
       from: "Matthew Mercado <support@support.escapedirector.com>",
-      to: ["matthewmercado1999@gmail.com"],
+      to: ["matthew@escapedirector.com"],
       subject: `New Portfolio Message From - ${name}`,
       text: message,
       html: `<p><strong>Name:</strong> ${name} <br />

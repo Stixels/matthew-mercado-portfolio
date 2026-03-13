@@ -3,12 +3,12 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
-import { MdEmail, MdLocalPhone } from "react-icons/md";
+import { Eyebrow } from "@/components/ui/typography";
 
 const formSchema = z.object({
   name: z.string().nonempty({ message: "Name is required" }),
@@ -21,7 +21,8 @@ const Contact: React.FC = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(formSchema),
   });
@@ -29,130 +30,149 @@ const Contact: React.FC = () => {
   const onSubmit = async (data: any) => {
     const res = await fetch("/api/sendEmail", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
 
     if (res.ok) {
-      toast({
-        title: "Success!",
-        description: "Your message has been sent.",
-        duration: 3000,
-      });
+      toast({ title: "Message sent.", description: "I'll get back to you shortly.", duration: 4000 });
+      reset();
     } else {
-      toast({
-        title: "Error!",
-        description: "There was an error sending your message.",
-        variant: "destructive",
-        duration: 3000,
-      });
+      toast({ title: "Something went wrong.", description: "Try emailing me directly at matthew@escapedirector.com", variant: "destructive", duration: 5000 });
     }
   };
 
-  const contactLinkclasses =
-    "text-gray-400 text-sm hover:text-blue-400 transition-colors duration-200 transform hover:underline";
-
   return (
-    <div
-      id="contact"
-      className="mx-auto flex max-w-5xl flex-col items-start justify-center space-y-6 rounded-lg bg-slate-900 p-4 md:p-8 md:py-20 lg:flex-row lg:items-center lg:space-x-6 lg:space-y-0"
-    >
-      <div className="flex flex-col space-y-4">
-        <h2 className="text-2xl font-bold text-blue-400">My Contact Info</h2>
-        <div className="flex items-center space-x-2">
-          <MdEmail size={20} className="text-blue-400" />
-          <a
-            href="mailto:matthew@escapedirector.com"
-            className={contactLinkclasses}
+    <section id="contact" className="relative border-t border-white/10 bg-background pt-32 pb-16 overflow-hidden">
+
+      {/* Ambient glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[60%] bg-accent/8 blur-[140px] rounded-full pointer-events-none" />
+
+      {/* Ambient display text */}
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none">
+        <span
+          className="font-heading font-medium text-white/[0.018] whitespace-nowrap tracking-tighter leading-none"
+          style={{ fontSize: "clamp(6rem, 22vw, 22rem)" }}
+        >
+          Let&rsquo;s Talk.
+        </span>
+      </div>
+
+      <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
+
+        {/* Header */}
+        <div className="flex flex-col items-center text-center space-y-5 mb-20">
+          <Eyebrow>Contact</Eyebrow>
+          <h2
+            className="font-heading font-medium tracking-tighter leading-none"
+            style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}
           >
-            matthew@escapedirector.com
-          </a>
+            Let&rsquo;s talk.
+          </h2>
+          <p className="text-muted-foreground text-lg md:text-xl max-w-lg">
+            Open to full-time engineering roles and select consulting engagements. If you&rsquo;re building something that demands both technical depth and product thinking — let&rsquo;s talk.
+          </p>
         </div>
-        <div className="flex items-center space-x-2">
-          <MdLocalPhone size={20} className="text-blue-400" />
-          <a href="tel:2407252448" className={contactLinkclasses}>
-            (240) 725-2448
-          </a>
-        </div>
-        <div className="flex items-center space-x-2">
-          <FaLinkedin size={20} className="text-blue-400" />
-          <a
-            href="https://www.linkedin.com/in/matthew-mercado-velez"
-            className={contactLinkclasses}
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 max-w-5xl mx-auto">
+
+          {/* Info sidebar */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-4 space-y-8 pt-2"
           >
-            matthew-mercado-velez
-          </a>
-        </div>
-        <div className="flex items-center space-x-2">
-          <FaGithub size={20} className="text-blue-400" />
-          <a
-            href="https://github.com/Stixels"
-            className={contactLinkclasses}
-            target="_blank"
-            rel="noopener noreferrer"
+            <div>
+              <Eyebrow className="block mb-2 text-white/50">Email</Eyebrow>
+              <a href="mailto:matthew@escapedirector.com" className="text-foreground hover:text-accent transition-colors duration-200 text-lg font-medium break-all">
+                matthew@escapedirector.com
+              </a>
+            </div>
+            <div>
+              <Eyebrow className="block mb-2 text-white/50">LinkedIn</Eyebrow>
+              <a
+                href="https://www.linkedin.com/in/matthew-mercado-velez"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-accent transition-colors duration-200 text-lg font-medium"
+              >
+                matthew-mercado-velez
+              </a>
+            </div>
+            <div>
+              <Eyebrow className="block mb-2 text-white/50">GitHub</Eyebrow>
+              <a
+                href="https://github.com/Stixels"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-accent transition-colors duration-200 text-lg font-medium"
+              >
+                github.com/Stixels
+              </a>
+            </div>
+            <div className="pt-4">
+              <Button size="lg" variant="outline" className="rounded-full border-white/20 hover:bg-white/5 px-8 h-14 w-full" asChild>
+                <a href="/matthew-mercado-resume.pdf" target="_blank" rel="noopener noreferrer">
+                  View Resume
+                </a>
+              </Button>
+            </div>
+          </motion.div>
+
+          {/* Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-8"
           >
-            Stixels
-          </a>
-        </div>
-        <div className="flex items-center space-x-2">
-          <FaTwitter size={20} className="text-blue-400" />
-          <a
-            href="https://twitter.com/Stixels_"
-            className={contactLinkclasses}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @Stixels_
-          </a>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm uppercase tracking-widest text-white/50 font-medium">Name</label>
+                  <Input
+                    {...register("name")}
+                    placeholder="Your name"
+                    className="bg-white/5 border-white/10 rounded-xl h-12 text-foreground placeholder:text-white/30 focus:border-white/30 focus:bg-white/[0.07]"
+                  />
+                  {errors.name && <p className="text-red-400 text-sm">{errors.name.message as string}</p>}
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm uppercase tracking-widest text-white/50 font-medium">Email</label>
+                  <Input
+                    {...register("email")}
+                    placeholder="your@email.com"
+                    className="bg-white/5 border-white/10 rounded-xl h-12 text-foreground placeholder:text-white/30 focus:border-white/30 focus:bg-white/[0.07]"
+                  />
+                  {errors.email && <p className="text-red-400 text-sm">{errors.email.message as string}</p>}
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm uppercase tracking-widest text-white/50 font-medium">Message</label>
+                <Textarea
+                  {...register("message")}
+                  placeholder="Tell me about your project..."
+                  className="bg-white/5 border-white/10 rounded-xl min-h-[160px] text-foreground placeholder:text-white/30 focus:border-white/30 focus:bg-white/[0.07] resize-none"
+                />
+                {errors.message && <p className="text-red-400 text-sm">{errors.message.message as string}</p>}
+              </div>
+              <Button
+                type="submit"
+                size="lg"
+                disabled={isSubmitting}
+                className="rounded-full bg-foreground text-background hover:bg-white/90 px-8 h-14 font-medium"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
+            </form>
+          </motion.div>
         </div>
       </div>
-      <div className="mt-6 w-full rounded-xl border bg-slate-950 p-6 text-left hover:shadow-xl">
-        <h1 className="text-2xl font-bold text-blue-400">Contact Me</h1>
-        <p className="mt-2 text-gray-400">
-          If you have any questions or would like to get in touch with me
-          directly, please fill out the form below.
-        </p>
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-4">
-          <div className="flex flex-col">
-            <label className="text-gray-400">Name</label>
-            <Input
-              {...register("name")}
-              className="mb-4 mt-1 rounded-md border-2 p-2"
-            />
-            {errors.name && (
-              <p className="text-red-600">{errors.name.message as string}</p>
-            )}
-          </div>
-          <div className="flex flex-col">
-            <label className="text-gray-400">Email</label>
-            <Input
-              {...register("email")}
-              className="mb-4 mt-1 rounded-md border-2 p-2"
-            />
-            {errors.email && (
-              <p className="text-red-600">{errors.email.message as string}</p>
-            )}
-          </div>
-          <div className="flex flex-col">
-            <label className="text-gray-400">Message</label>
-            <Textarea
-              {...register("message")}
-              className="mt-1 h-20 rounded-md border-2 p-2"
-            />
-            {errors.message && (
-              <p className="text-red-600">{errors.message.message as string}</p>
-            )}
-          </div>
-          <Button className="mt-4 bg-blue-400" type="submit">
-            Submit
-          </Button>
-        </form>
-      </div>
-    </div>
+    </section>
   );
 };
 

@@ -4,67 +4,58 @@
  
 @layer base {
   :root {
+    /* Base configuration (kept neutral) */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
- 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
+    --foreground: 240 5% 4%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 240 2% 55%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
- 
+    --popover-foreground: 240 5% 4%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
- 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
- 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
- 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
- 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
- 
+    --card-foreground: 240 5% 4%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --primary: 240 5% 4%;
+    --primary-foreground: 60 11% 95%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 240 5% 4%;
+    --accent: 229 96% 64%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --ring: 215 20.2% 65.1%;
- 
+    --destructive-foreground: 0 0% 98%;
+    --ring: 240 5% 4%;
     --radius: 0.5rem;
   }
- 
+
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
- 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
- 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
- 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
- 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
- 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
- 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
- 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
- 
-    --ring: 217.2 32.6% 17.5%;
+    /* Midnight Slate & Alabaster theme */
+    --background: 240 5% 4%; /* #0A0A0B */
+    --foreground: 60 11% 95%; /* #F3F3F1 Alabaster */
+    
+    --card: 240 6% 7%;
+    --card-foreground: 60 11% 95%;
+    
+    --popover: 240 6% 7%;
+    --popover-foreground: 60 11% 95%;
+    
+    --primary: 60 11% 95%;
+    --primary-foreground: 240 5% 4%;
+    
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 60 11% 95%;
+    
+    --muted: 240 4% 12%;
+    --muted-foreground: 240 2% 55%; /* #8A8A8E Muted Silver */
+    
+    --accent: 229 96% 64%; /* #4B6BFB Electric Slate */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 60 11% 95%;
+    
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 229 96% 64%;
   }
 }
  
@@ -75,4 +66,13 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
 }
