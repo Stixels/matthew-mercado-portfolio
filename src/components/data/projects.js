@@ -26,7 +26,7 @@ export const projects = [
       "JavaScript",
       "Socket.IO",
       "Stripe",
-      "SendGrid",
+      "Resend",
       "JWTs",
       "MUI",
       "AWS S3",
@@ -47,7 +47,7 @@ export const projects = [
         link: "https://matthewmercado.dev",
         linkText: "matthewmercado.dev",
         remainingText:
-          ". The website is built with Next.js, React.js, and Tailwind CSS. The contact form is created using SendGrid and Vercel serverless functions.",
+          ". The website is built with Next.js, React.js, and Tailwind CSS. The contact form is created using Resend and Vercel serverless functions.",
       },
       {
         heading: "Impact",
@@ -61,7 +61,7 @@ export const projects = [
       "Tailwind CSS",
       "Vercel",
       "ShadcnUI",
-      "SendGrid",
+      "Resend",
       "Figma",
       "Git",
     ],

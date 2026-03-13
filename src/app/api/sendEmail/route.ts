@@ -1,7 +1,7 @@
-import sgMail from "@sendgrid/mail";
+import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
+const resend = new Resend(process.env.RESEND_API_KEY as string);
 
 type Message = {
   name: string;
@@ -13,18 +13,24 @@ export async function POST(request: NextRequest) {
   const data: Message = await request.json();
   const { name, email, message } = data;
 
-  const content = {
-    to: "matthewmercado1999@gmail.com",
-    from: "portfolio@escapedirector.software",
-    subject: `New Portfolio Message From - ${name}`,
-    text: message,
-    html: `<p><strong>Name:</strong> ${name} <br />
+  try {
+    const { error } = await resend.emails.send({
+      from: "Matthew Mercado <support@support.escapedirector.com>",
+      to: ["matthewmercado1999@gmail.com"],
+      subject: `New Portfolio Message From - ${name}`,
+      text: message,
+      html: `<p><strong>Name:</strong> ${name} <br />
       <strong>Email:</strong> ${email} <br />
       <strong>Message:</strong> ${message}</p>`,
-  };
+    });
 
-  try {
-    await sgMail.send(content);
+    if (error) {
+      console.error(error);
+      return new NextResponse("Message failed to send.", {
+        status: 400,
+      });
+    }
+
     return new NextResponse("Message sent successfully.", {
       status: 200,
     });
